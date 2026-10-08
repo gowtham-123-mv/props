@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Props Example</title>
+
+    <!-- React Library -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // Child Component
+        function Student(props) {
+            return (
+                <div>
+                    <h2>Student Details</h2>
+                    <p>Name: {props.name}</p>
+                    <p>Branch: {props.branch}</p>
+                </div>
+            );
+        }
+
+        // Parent Component
+        function App() {
+
+            const studentName = "kalyan";
+            const studentBranch = "CSE";
+
+            return (
+                <div>
+                    <h1>React Props Example</h1>
+
+                    <Student
+                        name={studentName}
+                        branch={studentBranch}
+                    />
+                </div>
+            );
+        }
+
+        // Render App
+        const root = ReactDOM.createRoot(
+            document.getElementById("root")
+        );
+
+        root.render(<App />);
+
+    </script>
+
+</body>
+</html>
